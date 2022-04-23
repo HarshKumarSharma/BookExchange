@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Book</title>
+
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
+	
+</head>
+<body>
+
+	<!-- create navigation bar ( header) -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+				<a class="navbar-brand" href="#" th:href="@{/}">Home</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li><a class="navbar-brand" href="#" th:href="@{/home}"> Home</a></li>
+					<li><a class="navbar-brand" href="#" th:href="@{/viewbook}"> View Books</a></li>
+					<li sec:authorize="isAuthenticated()"><a th:href="@{/logout}">Logout</a></li>
+			
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<br>
+	<br>
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-6 col-md-offset-3">
+				
+				<h1> Add Book </h1>
+				<form th:action="@{/login}" method="post">
+					<div class = "form-group">
+            </br>
+             <table margin-left:auto; margin-right:auto;>
+            <tr> <td><label> Book Name:</label> </td> <td> <input type="text" name="bookname"/></td> </tr>
+            <tr> <td><label>Detail:</label></td> <td><input  type="text" name="bookdetail"/></td> </tr>
+            <tr> <td><label>Author:</label></td> <td> <input type="text" name="bookauthor"/></td> </tr>
+            <tr> <td><label>Publication:</label></td> <td> <input type="text" name="bookpub"/></td> </tr>
+            <tr> <td><label>Genre:</label></td> <td> <input type="text" name="bookgener"/></td> </tr> 
+            <tr> <td><label>Price:</label></td> <td> <input  type="number" name="bookprice"/></td> </tr>
+            <tr> <td><label>Book Image</label></td> <td> <input  type="file" name="bookimg"/></td> </tr> 
+            <tr> <td><td><input type="submit" value="SUBMIT"/></td></td>
+            </table>
+            </form>
+            </br>
+
+            </form>
+       </div>
+       </div>
+       </div>
+       
